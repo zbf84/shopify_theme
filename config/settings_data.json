@@ -136,7 +136,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo": "shopify://shop_images/Main_c8ff0b5d-c712-429a-be00-b29bd55cbc9d.jpg",
+          "logo": "shopify://shop_images/logo.png",
           "menu": "test-menu"
         }
       },
