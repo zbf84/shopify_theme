@@ -146,7 +146,7 @@
           "footer-0": {
             "type": "link_list",
             "settings": {
-              "footer_menu": ""
+              "footer_menu": "main-menu"
             }
           },
           "footer-1": {
