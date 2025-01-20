@@ -143,23 +143,23 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "footer-0": {
-            "type": "link_list",
-            "settings": {
-              "footer_menu": "main-menu"
-            }
-          },
           "footer-1": {
             "type": "text",
             "settings": {
               "logo": "shopify://shop_images/logo.png",
               "footer_text": "<p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p><p><strong>TELEPHONE:</strong> +91 987 654 3210</p><p><strong>EMAIL:</strong> yourmain@gmail.com</p>"
             }
+          },
+          "footer-0": {
+            "type": "link_list",
+            "settings": {
+              "footer_menu": "main-menu"
+            }
           }
         },
         "block_order": [
-          "footer-0",
-          "footer-1"
+          "footer-1",
+          "footer-0"
         ],
         "settings": {}
       }
