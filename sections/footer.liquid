@@ -4,6 +4,20 @@
     <div class="row">
       {% for block in section.blocks %}
         {% case block.type %}
+          {% when 'text' %}
+            <div class="col-md-4">
+              <div class="full">
+                <div class="logo_footer">
+                  <a href="{{shop.url}}"
+                    ><img width="210" src="{{ block.settings.logo | img_url:'medium' }}" alt="#"
+                  ></a>
+                </div>
+                <div class="information_f">
+                  {{ block.settings.footer_text }}
+                </div>
+              </div>
+            </div>
+
           {% when 'link_list' %}
             <div class="col-md-4">
               <div class="widget_menu">
@@ -17,6 +31,26 @@
                 </ul>
               </div>
             </div>
+
+          {% when 'newsletter' %}
+            <div class="col-md-4">
+              <div class="widget_menu">
+                <h3>{{ block.settings.newsletter_heading }}</h3>
+                <div class="information_f">
+                  <p>Subscribe by our newsletter and get update protidin.</p>
+                </div>
+                <div class="form_sub">
+                  <form>
+                    <fieldset>
+                      <div class="field">
+                        <input type="email" placeholder="Enter Your Mail" name="email">
+                        <input type="submit" value="Subscribe">
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
         {% endcase %}
       {% endfor %}
     </div>
@@ -24,16 +58,29 @@
 </footer>
 <!-- footer end -->
 <div class="cpy_">
-  <p class="mx-auto">
-    © 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
-
-    Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-  </p>
+  <p>© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a></p>
 </div>
+
 {% schema %}
 {
   "name": "Footer",
   "blocks": [
+    {
+      "type": "text",
+      "name": "TextArea",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Upload Footer Logo"
+        },
+        {
+          "type": "richtext",
+          "id": "footer_text",
+          "label": "Add your text"
+        }
+      ]
+    },
     {
       "type": "link_list",
       "name": "Menu",
@@ -44,7 +91,37 @@
           "label": "Add your menu"
         }
       ]
+    },
+    {
+      "type": "newsletter",
+      "name": "newsletter",
+      "settings": [
+        {
+          "type": "text",
+          "id": "newsletter_heading",
+          "label": "Add newsletter"
+        }
+      ]
     }
-  ]
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Footer Section"
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "text"
+      },
+      {
+        "type": "newsletter"
+      }
+    ]
+  }
 }
 {% endschema %}
