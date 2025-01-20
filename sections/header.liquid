@@ -2,7 +2,7 @@
 <header class="header_section">
   <div class="container">
     <nav class="navbar navbar-expand-lg custom_nav-container ">
-      {% if settings.section.logo != blank %}
+      {% if section.settings.logo != blank %}
         <a class="navbar-brand" href="{{ shop.url }}"
           ><img width="250" src="{{ section.settings.logo | img_url:'medium' }}" alt="#"
         ></a>
