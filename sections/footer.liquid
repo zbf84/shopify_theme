@@ -4,18 +4,6 @@
     <div class="row">
       {% for block in section.blocks %}
         {% case block.type %}
-          {% when 'text' %}
-            <div class="col-md-4">
-              <div class="full">
-                <div class="logo_footer">
-                  <a href="{{shop.url}}"><img width="210" src="{{block.settings.logo | img_url:'medium'}}" alt="#"></a>
-                </div>
-                <div class="information_f">
-                  {{ block.settings.footer_text }}
-                </div>
-              </div>
-            </div>
-
           {% when 'link_list' %}
             <div class="col-md-4">
               <div class="widget_menu">
@@ -65,22 +53,6 @@
 {
   "name": "Footer",
   "blocks": [
-    {
-      "type": "text",
-      "name": "TextArea",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "logo",
-          "label": "Upload Footer Logo"
-        },
-        {
-          "type": "richtext",
-          "id": "footer_text",
-          "label": "Add your text"
-        }
-      ]
-    },
     {
       "type": "link_list",
       "name": "Menu",
