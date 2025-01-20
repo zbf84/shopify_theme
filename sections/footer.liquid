@@ -4,7 +4,7 @@
     <div class="row">
       {% for block in section.blocks %}
         {% case block.type %}
-          {% when 'texttitle' %}
+          {% when 'text' %}
             <div class="col-md-4">
               <div class="full">
                 <div class="logo_footer">
@@ -64,11 +64,9 @@
 {% schema %}
 {
   "name": "Footer",
-  "class": "section-header",
-  "max_blocks": 3,
   "blocks": [
     {
-      "type": "texttitle",
+      "type": "text",
       "name": "TextArea",
       "settings": [
         {
